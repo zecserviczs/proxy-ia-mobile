@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:local_auth/local_auth.dart';
 
-import '../../../core/providers/auth_provider.dart';
-import '../../../core/theme/app_theme.dart';
-import '../../../core/widgets/custom_text_field.dart';
-import '../../../core/widgets/custom_button.dart';
+import '../../../../core/providers/auth_provider.dart';
+import '../../../../core/theme/app_theme.dart';
+import '../../../../core/widgets/custom_text_field.dart';
+import '../../../../core/widgets/custom_button.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
@@ -72,8 +72,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
     try {
       await ref.read(authProvider.notifier).login(
-        email: _emailController.text.trim(),
-        password: _passwordController.text,
+        _emailController.text.trim(),
+        _passwordController.text,
       );
       
       if (mounted) {
@@ -144,10 +144,10 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 // Formulaire de connexion
                 CustomTextField(
                   controller: _emailController,
-                  labelText: 'Email',
-                  hintText: 'votre@email.com',
+                  label: 'Email',
+                  hint: 'votre@email.com',
                   keyboardType: TextInputType.emailAddress,
-                  prefixIcon: Icons.email_outlined,
+                  prefixIcon: const Icon(Icons.email_outlined),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Veuillez saisir votre email';
@@ -163,10 +163,10 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 
                 CustomTextField(
                   controller: _passwordController,
-                  labelText: 'Mot de passe',
-                  hintText: 'Votre mot de passe',
+                  label: 'Mot de passe',
+                  hint: 'Votre mot de passe',
                   obscureText: _obscurePassword,
-                  prefixIcon: Icons.lock_outlined,
+                  prefixIcon: const Icon(Icons.lock_outlined),
                   suffixIcon: IconButton(
                     icon: Icon(
                       _obscurePassword ? Icons.visibility : Icons.visibility_off,
@@ -192,23 +192,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 
                 // Bouton de connexion
                 CustomButton(
+                  text: _isLoading ? 'Connexion...' : 'Se connecter',
                   onPressed: _isLoading ? null : _login,
-                  child: _isLoading
-                      ? const SizedBox(
-                          height: 20,
-                          width: 20,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                          ),
-                        )
-                      : const Text(
-                          'Se connecter',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
+                  isLoading: _isLoading,
                 ),
                 
                 const SizedBox(height: 24),

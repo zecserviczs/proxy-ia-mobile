@@ -13,29 +13,11 @@ class App extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final authState = ref.watch(authProvider);
-    final themeMode = ref.watch(themeProvider);
+    final router = ref.watch(appRouterProvider);
     
     return MaterialApp.router(
       title: 'Commerce Proxi-IA',
-      themeMode: themeMode,
-      theme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF1976D2),
-          brightness: Brightness.light,
-        ),
-        fontFamily: 'Inter',
-      ),
-      darkTheme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF1976D2),
-          brightness: Brightness.dark,
-        ),
-        fontFamily: 'Inter',
-      ),
-      routerConfig: AppRouter.router,
+      routerConfig: router,
       debugShowCheckedModeBanner: false,
     );
   }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   // Couleurs principales
@@ -31,43 +30,43 @@ class AppTheme {
       ),
       
       // Typographie
-      textTheme: GoogleFonts.interTextTheme().copyWith(
-        displayLarge: GoogleFonts.inter(
+      textTheme: const TextTheme(
+        displayLarge: TextStyle(
           fontSize: 32,
           fontWeight: FontWeight.bold,
           color: textPrimaryColor,
         ),
-        displayMedium: GoogleFonts.inter(
+        displayMedium: TextStyle(
           fontSize: 28,
           fontWeight: FontWeight.w600,
           color: textPrimaryColor,
         ),
-        displaySmall: GoogleFonts.inter(
+        displaySmall: TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.w600,
           color: textPrimaryColor,
         ),
-        headlineLarge: GoogleFonts.inter(
+        headlineLarge: TextStyle(
           fontSize: 22,
           fontWeight: FontWeight.w600,
           color: textPrimaryColor,
         ),
-        headlineMedium: GoogleFonts.inter(
+        headlineMedium: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w500,
           color: textPrimaryColor,
         ),
-        titleLarge: GoogleFonts.inter(
+        titleLarge: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w500,
           color: textPrimaryColor,
         ),
-        bodyLarge: GoogleFonts.inter(
+        bodyLarge: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w400,
           color: textPrimaryColor,
         ),
-        bodyMedium: GoogleFonts.inter(
+        bodyMedium: TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w400,
           color: textSecondaryColor,
@@ -75,12 +74,12 @@ class AppTheme {
       ),
       
       // AppBar
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         backgroundColor: surfaceColor,
         foregroundColor: textPrimaryColor,
         elevation: 0,
         centerTitle: true,
-        titleTextStyle: GoogleFonts.inter(
+        titleTextStyle: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w600,
           color: textPrimaryColor,
@@ -88,7 +87,7 @@ class AppTheme {
       ),
       
       // Cartes
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: cardColor,
         elevation: 2,
         shape: RoundedRectangleBorder(
@@ -144,56 +143,56 @@ class AppTheme {
       ),
       
       // Typographie
-      textTheme: GoogleFonts.interTextTheme().copyWith(
-        displayLarge: GoogleFonts.inter(
+      textTheme: const TextTheme(
+        displayLarge: TextStyle(
           fontSize: 32,
           fontWeight: FontWeight.bold,
           color: Colors.white,
         ),
-        displayMedium: GoogleFonts.inter(
+        displayMedium: TextStyle(
           fontSize: 28,
           fontWeight: FontWeight.w600,
           color: Colors.white,
         ),
-        displaySmall: GoogleFonts.inter(
+        displaySmall: TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.w600,
           color: Colors.white,
         ),
-        headlineLarge: GoogleFonts.inter(
+        headlineLarge: TextStyle(
           fontSize: 22,
           fontWeight: FontWeight.w600,
           color: Colors.white,
         ),
-        headlineMedium: GoogleFonts.inter(
+        headlineMedium: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w500,
           color: Colors.white,
         ),
-        titleLarge: GoogleFonts.inter(
+        titleLarge: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w500,
           color: Colors.white,
         ),
-        bodyLarge: GoogleFonts.inter(
+        bodyLarge: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w400,
           color: Colors.white,
         ),
-        bodyMedium: GoogleFonts.inter(
+        bodyMedium: TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w400,
-          color: Colors.grey[300],
+          color: Colors.grey,
         ),
       ),
       
       // AppBar
-      appBarTheme: AppBarTheme(
-        backgroundColor: const Color(0xFF121212),
+      appBarTheme: const AppBarTheme(
+        backgroundColor: Color(0xFF121212),
         foregroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
-        titleTextStyle: GoogleFonts.inter(
+        titleTextStyle: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w600,
           color: Colors.white,
@@ -201,7 +200,7 @@ class AppTheme {
       ),
       
       // Cartes
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: const Color(0xFF1E1E1E),
         elevation: 2,
         shape: RoundedRectangleBorder(
@@ -227,11 +226,11 @@ class AppTheme {
       inputDecorationTheme: InputDecorationTheme(
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: Colors.grey[600]!),
+          borderSide: const BorderSide(color: Colors.grey),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: Colors.grey[600]!),
+          borderSide: const BorderSide(color: Colors.grey),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
@@ -246,10 +245,3 @@ class AppTheme {
     );
   }
 }
-
-
-
-
-
-
-
