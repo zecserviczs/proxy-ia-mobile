@@ -29,7 +29,7 @@ class AuthState {
 }
 
 class AuthNotifier extends StateNotifier<AuthState> {
-  AuthNotifier() : super(const AuthState());
+  AuthNotifier() : super(const AuthState(isAuthenticated: true, userEmail: 'demo@example.com'));
 
   Future<void> login(String email, String password) async {
     state = state.copyWith(isLoading: true, error: null);

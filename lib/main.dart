@@ -6,6 +6,7 @@ import 'app.dart';
 import 'core/theme/app_theme.dart';
 import 'core/services/notification_service.dart';
 import 'core/services/local_storage_service.dart';
+import 'core/services/api_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,6 +17,9 @@ void main() async {
   
   // Initialiser les notifications
   await NotificationService.init();
+  
+  // Initialiser l'API service
+  ApiService().init();
   
   runApp(
     const ProviderScope(
